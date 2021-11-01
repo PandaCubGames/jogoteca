@@ -82,12 +82,22 @@ def logout():
 
 
 last_input = np.array([0, 0, 0])
-input_nubank = {'x': 0, "y": 0, "z" : 0, "Name": "Meu nome", "play_number": 0}
+input_nubank = var = {'x': 0, "y": 0, "z": 0, "Name": "Meu nome", "play_number": 0}
 
-@app.route("/nubank/")
+
+@app.route("/nubank/", methods=["GET"])
 def nubank():
+    new_input = input_nubank
+    print(new_input)
+    return jsonify(new_input)
 
-    return jsonify({'x': -10, "y": -100, "z": 0, "player_name": "Foi", "play_number": 0})
+
+@app.route("/nubankpost/", methods=["POST"])
+def nubankpost():
+    data = request.get_json()
+    global input_nubank
+    input_nubank = data
+    return jsonify(data)
 
 
 if __name__ == '__main__':
