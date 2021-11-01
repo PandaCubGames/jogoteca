@@ -87,7 +87,7 @@ input_nubank = {'x': 0, "y": 0, "z" : 0, "Name": "Meu nome", "play_number": 0}
 @app.route("/nubank/")
 def nubank():
 
-    return jsonify({'x': 0, "y": -100, "z": 0, "player_name": "Otavio", "play_number": 0})
+    return jsonify({'x': -10, "y": -100, "z": 0, "player_name": "Foi", "play_number": 0})
 
 
 if __name__ == '__main__':
